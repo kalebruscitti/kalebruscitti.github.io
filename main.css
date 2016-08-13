@@ -1,28 +1,61 @@
 body {
-  height: inherit;
   font-family: "Helvetica";
+  min-height: 100vh;
+}
+
+html {
+   margin: 0px;
+   min-height: 100vh;
 }
 
 #gravity{
   color: white;
-}
-
-nav{
-  color: blue;
-  display: inline;
-}
-
-.inline{
-  display: inline;
-  padding: 2rem;
-  font-size: 2rem;
-}
-
-.jumbotron{
   background-color: black;
-  padding: 20rem;
+  height: 80vh;
+  position: relative;
 }
 
-ul {
-  list-style-type: none;
+.text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.buttonleft{
+  color: white;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  min-height: 100%
+  display: block;
+	height: 100%;
+	width: 10%;
+  background-image: url("btn left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+}
+
+.buttonleft:hover{
+  opacity: 0.8;
+}
+
+.buttonright{
+  color: white;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  min-height: 100%
+  display: block;
+  height: 100%;
+  width: 10%;
+  background-image: url("btn right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+}
+
+.buttonright:hover{
+  opacity: 0.8;
 }
