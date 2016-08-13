@@ -1,3 +1,28 @@
 body {
-  font-family: "Comic Sans MS";
+  height: inherit;
+  font-family: "Helvetica";
+}
+
+#gravity{
+  color: white;
+}
+
+nav{
+  color: blue;
+  display: inline;
+}
+
+.inline{
+  display: inline;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.jumbotron{
+  background-color: black;
+  padding: 20rem;
+}
+
+ul {
+  list-style-type: none;
 }
