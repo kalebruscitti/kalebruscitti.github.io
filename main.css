@@ -8,22 +8,19 @@ html {
    min-height: 100vh;
 }
 
-#gravity{
-  color: white;
-  background-image: url("https://raw.githubusercontent.com/kalebruscitti/kalebruscitti.github.io/master/gravity.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 80vh;
-  position: relative;
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
+.carousel-inner > .item > img{
+  height:85vh;
+  width:100%;
+}
+.carousel > a{
+  height: 85vh;
 }
 .col-sm-4{
   margin: 10px;
 }
 
-.text{
+.carousel-caption{
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,7 +30,6 @@ html {
 }
 
 .buttonleft{
-  color: white;
   position: absolute;
   top: 0%;
   left: 0%;
@@ -52,7 +48,6 @@ html {
 }
 
 .buttonright{
-  color: white;
   position: absolute;
   top: 0%;
   right: 0%;
