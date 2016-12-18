@@ -1,66 +1,42 @@
 body {
   font-family: "Helvetica";
   min-height: 100vh;
+  color: #2A2A2A;
 }
 
 html {
-   margin: 0px;
-   min-height: 100vh;
+  margin: 0px;
+  min-height: 100vh;
 }
 
-.carousel-inner > .item > img{
-  height:85vh;
-  width:100%;
+.side_link{
+  text-decoration: none;
+  color: #2A2A2A;
 }
-.carousel > a{
-  height: 85vh;
-}
-.col-sm-4{
-  margin: 10px;
-}
-
-.carousel-caption{
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
+.left{
+  width: 30vh;
+  float:left;
+  border-right: 2px solid;
+  min-height: 80vh;
 }
 
-.buttonleft{
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  min-height: 100%
-  display: block;
-	height: 100%;
-	width: 10%;
-  background-image: url("https://raw.githubusercontent.com/kalebruscitti/kalebruscitti.github.io/master/btn%20left.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.3;
+.main{
+  float: left;
+  padding: 5vh;
+  max-width: 80vh;
 }
 
-.buttonleft:hover{
-  opacity: 0.8;
+.side{
+  list-style-type: none;
 }
 
-.buttonright{
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  min-height: 100%
-  display: block;
-  height: 100%;
-  width: 10%;
-  background-image: url("https://raw.githubusercontent.com/kalebruscitti/kalebruscitti.github.io/master/btn%20right.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.3;
+.list_ele{
+  font-size: 3vh;
+  padding-top: 10vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
 }
 
-.buttonright:hover{
-  opacity: 0.8;
+.foot{
+  float: bottom;
 }
