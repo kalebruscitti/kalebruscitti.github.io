@@ -1,0 +1,42 @@
+body {
+  font-family: "Helvetica";
+  min-height: 100vh;
+  color: #2A2A2A;
+}
+
+html {
+  margin: 0px;
+  min-height: 100vh;
+}
+
+.side_link{
+  text-decoration: none;
+  color: #2A2A2A;
+}
+.left{
+  width: 30vh;
+  float:left;
+  border-right: 2px solid;
+  min-height: 80vh;
+}
+
+.main{
+  float: left;
+  padding: 5vh;
+  max-width: 80vh;
+}
+
+.side{
+  list-style-type: none;
+}
+
+.list_ele{
+  font-size: 3vh;
+  padding-top: 10vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
+}
+
+.foot{
+  float: bottom;
+}
