@@ -9,8 +9,8 @@
 title: Kaleb Ruscitti
 description: > # this means to ignore newlines until "baseurl:"
   Built with Jekyll, based on hack.css. Modified by TJ Yang
-baseurl: "/testpage" # the subpath of your site, e.g. /blog
-url:  "xcelsis.github.io/testpage" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url:  "kaleb.ruscitti.ca" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
