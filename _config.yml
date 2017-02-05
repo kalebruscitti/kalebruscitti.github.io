@@ -1,0 +1,54 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Kaleb Ruscitti
+description: > # this means to ignore newlines until "baseurl:"
+  Built with Jekyll, based on hack.css. Modified by TJ Yang
+baseurl: "/testpage" # the subpath of your site, e.g. /blog
+url:  "xcelsis.github.io/testpage" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+# Sass settings
+sass:
+  style: compressed
+
+# Theme settings
+theme_mode: standard  # choices are: 'dark', 'standard', 'markdown'
+
+# Customizations
+email: kaleb.ruscitti@uwaterloo.ca
+
+navigation:
+  - text: Home
+    url: /
+  - text: Resume
+    url: /resume.pdf
+  - text: Projects
+    url: /projects
+
+projects:
+  - name: Math Animations
+    description: A series of small math animations I made to capture some interesting and beautiful concepts in mathematics.
+    link: https://github.com/kalebruscitti/Small-Animations
+    image:
+  - name: Pygame Gravity Visualization
+    description: A 2D Simulation/Visualization of Newtonian gravitation, using python 2.7 and the pygame library. One of my very first programming projects.
+    link: https://github.com/kalebruscitti/GravitySimulation
+    image:
+social:
+  - service: github
+    username: kalebruscitti
+    link: https://github.com/kalebruscitti
+  - service: linkedin
+    username: Kaleb Ruscitti
+    link: https://www.linkedin.com/in/kaleb-ruscitti-b4a2659b/
+
+# Plugins
+gems:
+  - jekyll-seo-tag
