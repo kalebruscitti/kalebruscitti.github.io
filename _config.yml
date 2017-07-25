@@ -33,6 +33,9 @@ navigation:
     url: /projects
 
 projects:
+  - name: Atari Asteroids Neural Network
+    description: A neural-evolution based Neural Network that learns to play the Atari game Asteroids. Uses "Pythonic Asteroids" by Amin Bandali, built in python 2.7.
+    link: https://github.com/kalebruscitti/Asteroids-AI
   - name: Math Animations
     description: A series of small math animations I made to capture some interesting and beautiful concepts in mathematics.
     link: https://github.com/kalebruscitti/Small-Animations
