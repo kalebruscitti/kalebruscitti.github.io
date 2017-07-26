@@ -8,7 +8,7 @@
 # Site settings
 title: Kaleb Ruscitti
 description: > # this means to ignore newlines until "baseurl:"
-  Thanks to [TJ Yang](https://github.com/teejayyang) for help with layout and mobile support!
+  Thanks to TJ Yang for help with layout and mobile support!
 baseurl: "" # the subpath of your site, e.g. /blog
 url:  "kaleb.ruscitti.ca" # the base hostname & protocol for your site
 
