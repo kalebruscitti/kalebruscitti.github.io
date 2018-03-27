@@ -51,6 +51,9 @@ social:
   - service: linkedin
     username: Kaleb Ruscitti
     link: https://www.linkedin.com/in/kaleb-ruscitti-b4a2659b/
+  - service: IQC
+    username: Kaleb Ruscitti
+    link: https://services.iqc.uwaterloo.ca/people/profile/kdruscit/
 
 # Plugins
 gems:
