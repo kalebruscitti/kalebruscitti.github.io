@@ -1,15 +1,17 @@
 // This file contains custom (non hack.css) styles
 
-
-figure
-  display: inline-block
-  margin: 20px
-  img
-    float:right
-    width:30vh
-    padding: 5vh 1vh 1vh 5vh
-  figcaption
-    text-align: center
+figure {
+  display: inline-block;
+  margin: 20px;
+  img {
+    float: right;
+    padding-left: 5vh
+    padding-right: 5vh
+  }
+  figcaption {
+    text-align: center;
+  }
+}
 
 .t-hackcss {  // Main prefix to avoid collisions
 
