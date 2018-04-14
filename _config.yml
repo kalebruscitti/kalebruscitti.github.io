@@ -45,16 +45,8 @@ projects:
     description: A 2D Simulation/Visualization of Newtonian gravitation, using python 2.7 and the pygame library. One of my very first programming projects.
     link: https://github.com/kalebruscitti/GravitySimulation
     image:
+
 social:
-  - service: github
-    username: kalebruscitti
-    link: https://github.com/kalebruscitti
-  - service: linkedin
-    username: Kaleb Ruscitti
-    link: https://www.linkedin.com/in/kaleb-ruscitti-b4a2659b/
-  - service: IQC
-    username: Kaleb Ruscitti
-    link: https://services.iqc.uwaterloo.ca/people/profile/kdruscit/
 
 # Plugins
 gems:
