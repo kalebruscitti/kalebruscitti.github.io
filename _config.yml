@@ -7,7 +7,7 @@
 
 # Site settings
 title: Kaleb Ruscitti
-description: > # this means to ignore newlines until "baseurl:"
+description: UW Math/Physics Undergrad."
 baseurl: "" # the subpath of your site, e.g. /blog
 url:  "kaleb.ruscitti.ca" # the base hostname & protocol for your site
 
