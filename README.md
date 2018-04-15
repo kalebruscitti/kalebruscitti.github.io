@@ -1,5 +1,3 @@
-Made by [TJ Yang](https://github.com/xcelsis)
-
 
 ## License
 

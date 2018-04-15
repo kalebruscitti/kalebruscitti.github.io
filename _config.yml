@@ -49,5 +49,5 @@ projects:
 social:
 
 # Plugins
-gems:
+plugins:
   - jekyll-seo-tag
