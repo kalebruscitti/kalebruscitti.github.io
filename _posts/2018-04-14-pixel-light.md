@@ -6,16 +6,16 @@ categories: problems
 ---
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
-The past ~two weeks at work, I have been setting up this fancy optoelectrical device called a Digital Micromirror Device (DMD). It is a device with a 1920x1080 array of square mirrors, whose side lengths are 10.8 micron each. You can use an electrical signal to flip the mirrors by 24 degrees, which allows you to reflect light towards or away from whatever image plane you are working with. The device can change the mirrors at over 20kHz, which is 20,000 times per second. 
+The past ~two weeks at work, I have been setting up this fancy optoelectrical device called a Digital Micromirror Device (DMD). It is a device with a 1920x1080 array of square mirrors, whose side lengths are 10.8 micron each. You can use an electrical signal to flip the mirrors by 24 degrees, which allows you to reflect light towards or away from whatever image plane you are working with. The device can change the mirrors at over 20kHz, which is 20,000 times per second.
 
-In our laboratory's setup, we have the DMD placed in the Fourier plane of a lens, with a laser light source reflecting off of the mirrors and getting focused down in the image plane. Once we got the device's software connected to our network and working properly (which was a pain in itself!), a masters student and I started trying to make cool shapes with this thing. We hooked up a scanning-slit beam profiler at the len's focus, turned on the laser and saw this:
+In our laboratory's setup, we have the DMD placed behind a focusing lens, with a laser light source reflecting off of the mirrors and getting focused down in the image plane. Once we got the device's software connected to our network and working properly (which was a pain in itself!), a masters student and I started trying to make cool shapes with this thing. We hooked up a beam profiler at the lens' focus to measure the light intensity, turned on the laser and saw this:
 
 {: style="text-align:center"}
 ![Pixellated Light]({{ "/pixels.png" }})
 
 My co-worker looked at me and said "Are those squares usually on the beam profiler?". We figured that this square lattice pattern was way too rigid to be real - it must be an artifact of the beam profiler. We turned off our laser and held a fiber cable up to the beam profiler, and the lattice pattern was nowhere to be found. So is this pattern really there?
 
-There is one thing that seems like an obvious culprit here - the DMD pixels. After all, the pixels do not sit side by side perfectly, there are small gaps inbetween them. Was the light going between the pixels being lost, and causing these "light pixels"?
+There is one thing that seems like an obvious culprit here - the DMD pixels. After all, the pixels do not sit side by side perfectly, there are small gaps in between them. Was the light going between the pixels being lost, and causing these "light pixels"?
 
 Like the good scientists we are in training to be, my co-worker and I immediately started trying to test our hypothesis. The first thing we did is try to slide the beam profiler side to see, seeing if the lattice moved relative to the beam image underneath. They did not. We then zoomed in onto one of the lattice gaps, to try and see how large it is - about 10 micron. That is certainly too large, since one mirror is already only 10.8 micron, and we're also focusing the light down.
 
@@ -23,7 +23,7 @@ Convinced that the light wasn't being lost between the DMD pixels, we now wanted
 
 I didn't immediately see what this could mean, but my co-worker did. The light gaps are in the time domain, not the space domain. Let me elaborate; the beam profiler we are using is a scanning-slit profiler. What that means is that the device has two slits, which scan the x and y profiles of the beam. The slits record the light field at each co-ordinate, and then the computer stitches it all together. Now imagine if the light turned off for a brief moment while the slits are scanning - at that position, the profiler would record no light, which then shows up as darkness on those x,y lines. So it wasn't that there are gaps in the light field spatially, it is that the light is periodically turning off. When we changed the scan speed of the profiler, it changed the speed that the slits move, and thus the distance it moved during darkness and the width of the lattice.
 
-We both realized that it must be that the DMD is periodically flipping its' mirrors and sending the light away from the beam profiler. I took at look at the code I wrote for the DMD, and saw that instead of 
+We both realized that it must be that the DMD is periodically flipping its' mirrors and sending the light away from the beam profiler. I took at look at the code I wrote for the DMD, and saw that instead of
 
 	load image
 	while True:
