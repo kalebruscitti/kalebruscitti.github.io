@@ -26,8 +26,8 @@ email: kaleb.ruscitti@uwaterloo.ca
 navigation:
   - text: Home
     url: /
-  - text: Resume
-    url: /resume.pdf
+  - text: Curriculum Vitae
+    url: /resume
   - text: Research and Projects
     url: /research
   - text: Misc.
