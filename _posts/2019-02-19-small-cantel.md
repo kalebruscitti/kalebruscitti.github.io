@@ -19,7 +19,7 @@ For our proof of concept test of our measurement scheme, we are using a microsca
 The idea is that the force felt by the cantilever is proportional to the product of the gate voltage and the external voltage of the electrodes we want to characterize. This is because the cantilever and gate act as a capacitor, which puts a charge on the cantilever with magnitude proportional to the gate voltage;
 $$q = CV_g$$
 and then the force felt by the cantilever is
-$$F = qE = CV_g \del \phi \sim CV_g V_e$$
+$$F = qE = CV_g \nabla \phi \sim CV_g V_e$$
 We can then give our gate voltage a frequency such that one of the product termshas a resonant frequency with the cantilever, such that we can recontruct the electrode voltage from the cantilever oscillations.
 
 It all sounds good on paper, but a 160um cantilever really is very small in everyday terms. When holding the chip in your palm, you cannot see the cantilever with your naked eye. Not only that but touching the cantilever at all will very likely break it right off of the chip. So you can imagine that it is pretty difficult to put it 50um above a copper gate without breaking it. This is why I needed to develop my laboratory hands.
