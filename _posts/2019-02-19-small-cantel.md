@@ -14,7 +14,7 @@ The goal of my project is to characterize the transfer function of electrodes in
 For our proof of concept test of our measurement scheme, we are using a microscale cantilever as a stand in for the silicon nanowire. These cantilevers are 160 microns long, and protrude from a 3.14mm x 4mm chip. We plate the cantilever with a thing layer of gold for conduction, and then position it 50um above a 200um wide copper strip (the 'gate').
 
 {: style="text-align:center"}
-![Cantilever and Gate]({{ "/gate.jpg" }}) 
+![Cantilever and Gate]({{ "/images/gate.jpg" }}) 
 
 The idea is that the force felt by the cantilever is proportional to the product of the gate voltage and the external voltage of the electrodes we want to characterize. This is because the cantilever and gate act as a capacitor, which puts a charge on the cantilever with magnitude proportional to the gate voltage;
 $$q = CV_g$$
