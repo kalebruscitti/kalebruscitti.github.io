@@ -11,7 +11,7 @@ The past ~two weeks at work, I have been setting up this fancy optoelectrical de
 In our laboratory's setup, we have the DMD placed behind a focusing lens, with a laser light source reflecting off of the mirrors and getting focused down in the image plane. Once we got the device's software connected to our network and working properly (which was a pain in itself!), a masters student and I started trying to make cool shapes with this thing. We hooked up a beam profiler at the lens' focus to measure the light intensity, turned on the laser and saw this:
 
 {: style="text-align:center"}
-![Pixellated Light]({{ "/pixels.png" }})
+![Pixellated Light]({{ "/images/pixels.png" }})
 
 My co-worker looked at me and said "Are those squares usually on the beam profiler?". We figured that this square lattice pattern was way too rigid to be real - it must be an artifact of the beam profiler. We turned off our laser and held a fiber cable up to the beam profiler, and the lattice pattern was nowhere to be found. So is this pattern really there?
 
@@ -38,6 +38,6 @@ I had written
 so the DMD kept resetting to reload the same image. Since the periodicity of the DMD was greater then the periodicity of the profiler, then we got the lattice effect. We changed the code and saw that everything was as expected.
 
 {: style="text-align:center"}
-![Normal Light]({{ "/no_pixels.png" }})
+![Normal Light]({{ "/images/no_pixels.png" }})
 
 As a final note, this is the same effect that causes pictures of spinning propellors to come out very strangely. Look it up if you've never seen it!
