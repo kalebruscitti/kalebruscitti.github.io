@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE squad SYSTEM "squad.dtd">
+<?xml-stylesheet href="squad.xsl" type="text/xsl"?>
+
+<squad nick="UTU">
+	<name>Under the Umbrella<\name>
+	<email></email>
+	<web></web>
+	<picture>umbrella.paa</picture>
+	<title> UTU was here</title>
+	
+	<member id="76561198054325025" nick="Kaleb">
+		<name> Kaleb </name>
+		<email></email>
+		<icq></icq>
+		<remark> math nerd </remark>
+	</member>
+	
+	<!-- waiting to get IDs
+	<member id="" nick="Bagool">
+		<name> Zack </name>
+		<email></email>
+		<icq></icq>
+		<remark> best K/D </remark>
+	</member>
+	
+	<member id="" nick="Josh">
+		<name> Josh </name>
+		<email></email>
+		<icq></icq>
+		<remark> dashing commander </remark>
+	</member>
+	-->
+</squad>
