@@ -32,8 +32,6 @@ navigation:
     url: /research
   - text: Contact
     url: /contact
-  - text: Misc.
-    url: /misc
 
 projects:
   - name: Adaptive Optics for Addressing Ions in an Ion Trap.
