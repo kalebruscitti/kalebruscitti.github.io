@@ -21,7 +21,7 @@ sass:
 theme_mode: standard  # choices are: 'dark', 'standard', 'markdown'
 
 # Customizations
-email: kaleb.ruscitti@uwaterloo.ca
+email: kaleb@ruscitti.ca
 
 navigation:
   - text: Home
@@ -30,6 +30,8 @@ navigation:
     url: /resume
   - text: Research and Projects
     url: /research
+  - text: Contact
+    url: /contact
   - text: Misc.
     url: /misc
 
