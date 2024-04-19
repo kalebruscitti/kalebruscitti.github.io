@@ -33,5 +33,7 @@ $on-palm:          768vh;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "styles",
-        "highlight"
+        "highlight",
+        "extra.css"
 ;
+
