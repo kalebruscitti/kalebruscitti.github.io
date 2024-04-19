@@ -28,10 +28,12 @@ navigation:
     url: /
   - text: Curriculum Vitae
     url: /resume
-  - text: Mathematics
+  - text: Research
     url: /research
   - text: Contact
     url: /contact
+  - text: Collection
+    url: /links
 
 projects:
   - name: Adaptive Optics for Addressing Ions in an Ion Trap.
