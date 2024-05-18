@@ -21,6 +21,9 @@
                 background: var(--color-surface-mixed-200);
                 color: var(--color-primary-700);
         }
+        a{
+                color: #ff2e88;
+        }
 }
 @media (prefers-color-scheme: dark) {
         :root {
@@ -44,6 +47,9 @@
         html{
                 background: var(--color-surface-mixed-200);
                 color: var(--color-primary-700);
+        }
+        a{
+                color: #ff2e88;
         }
 }
 
