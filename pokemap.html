@@ -1,6 +1,11 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/extra.css">
+<style>
+html:{
+  margin = auto;
+}
+</style>
 </head>
 <section>
   <h1> Pok&eacute;Map </h1>
@@ -14,7 +19,7 @@
   but exclude moves with that substring, add a space. E.g. to
   search "Fire" and exclude "Fire Blast", search for "fire "
   </p>
-<div style="position:relative;width:100%;height:90%">
+<div style="position:relative; width:80%; height:70%; margin:auto;">
 <iframe
   src="./pokemap_data.html"
   title="PokeMap"
@@ -22,4 +27,19 @@
 >
 </iframe>
 </div>
+  <p> Some notes: <br>
+  1. Move data is taken across all generations, so
+  a move is included for a pokemon if it learned it at
+  any point. <br>
+  2. Cluster labels were made by manually eyeballing the 'mons in a
+  cluster and picking a fitting word. <br>
+  <br>
+  The visualization was made with
+  <a href="https://github.com/TutteInstitute/datamapplot">
+    datamapplot</a>,
+  <a href="https://github.com/lmcinnes/umap"> UMAP</a>,
+  and the python library
+  <a href="https://github.com/TutteInstitute/vectorizers">
+    vectorizers</a>.
+  </p>
 </html>
