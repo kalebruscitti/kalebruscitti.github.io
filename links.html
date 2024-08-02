@@ -1,15 +1,38 @@
 ---
 layout: default
 ---
+<style>
+.column{
+  float: left;
+  width: 50%;
+}
+.row:after{
+  content:"";
+  display: table;
+  clear: both;
+}
+</style>
 <section>
   <h1> Collection </h1>
-  <h3> Fun articles </h3>
-  <ul>
-    <li><a href="https://softwarecrisis.dev/letters/llmentalist/"> The LLMentalist Effect </a> </li>
-  </ul>
-  <h3> People </h3>
-  <ul>
-    <li><a href="https://jgvanwyk.com"> Jacques G. van Wyk </a> </li>
-  </ul>
-
+  <div class="row">
+    <div class="column">
+      <h3> Fun articles </h3>
+      <ul>
+        <li><a href="https://softwarecrisis.dev/letters/llmentalist/"> The LLMentalist Effect </a> </li>
+      </ul>
+      <h3> Interesting People </h3>
+      <ul>
+        <li><a href="https://100r.co/site/home.html"> 100 Rabbits </a> </li>
+        <li><a href="https://jgvanwyk.com"> Jacques G. van Wyk </a> </li>
+        <li><a href="https://flemesre.github.io"> Francois Lemesre <a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3> Math &amp; Science </h3>
+      <ul>
+        <li><a href="https://www.lesswrong.com/s/czrXjvCLsqGepybHC"> Distilling Singular Learning Theory </a></li>
+        <li><a href="https://github.com/tutteinstitute/tutorials"> TIMC Data Science Tutorials </a></li>
+      </ul>
+    </div>
+  </div>
 </section>
