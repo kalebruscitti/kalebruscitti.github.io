@@ -5,16 +5,46 @@ layout: default
 <style>
   img {
   max-width: 70em;
-}
+  }
+  .column{
+    float: left;
+    width: 50%;
+  }
+  .row:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
 </style>
-<section>
-<h2 id="battlecard-galactica">Battlecard Galactica</h2>
-<p>Battlecard Galactica is a turn-based strategy board game, crossed with a deck-builder card game.</p>
-<p><img src="https://kaleb.ruscitti.ca/images/bcggameplay.png" width=960></p>
-<p>Inspired by Star Realms, Slay the Spire and Civilization, Battlecard Galactica aims to take the joy of building up a delicious combo in your deck, and mix it with a strategy game that is more complex then Star Realms, but can be completed much faster than a game of Civilization.</p>
-<p>The game is programmed in Godot 4, entirely by myself and with the help of many online tutorials. The art for all the pieces and cards was also done by myself, and the audio is all placeholders taken from royalty-free sites.</p>
-<p><img style="float: right;" src="https://kaleb.ruscitti.ca/images/card.png" width=480></p>
-<h3 id="download">Download</h3>
-<p>On Sept 14th at 5pm EST, download links will be available here.</p>
-</section>
+<div class="row">
+  <div>
+    <h2 id="battlecard-galactica">Battlecard Galactica</h2>
+      <p>Battlecard Galactica is a turn-based strategy board game, crossed with a
+      deck-builder card game.</p>
+      <p><img src="https://kaleb.ruscitti.ca/images/bcggameplay.png" width=960></p>
+  </div>
+  <div class="column">
+    <p>Inspired by Star Realms, Slay the Spire and Civilization, Battlecard
+    Galactica aims to take the joy of building up a delicious combo in your deck,
+    and mix it with a strategy game that is more complex then Star Realms, but can
+    be completed much faster than a game of Civilization.</p>
+    <p> It is a multiplayer, PvP turn-based strategy game for 2 players. Every
+    turn in the build phase, play cards from your deck to build up your empire
+    and fleet, then engage the enemy in combat during the move phase. Building
+    up your economy lets you purchase new cards to build up your deck, but only
+    if your opponent doesn't get to them first!</p>
+    <p>The game is programmed in Godot 4, entirely by myself and with the help of
+    many online tutorials. The art for all the pieces and cards was also done by
+    myself, and the audio is all placeholders taken from royalty-free sites.</p>
+   <h3 id="download">Download</h3>
+  <p>On Sept 14th at 5pm EST, download links will be available here.</p>
+  <p><b> Linux: </b> <a href=""> not yet available </a></p>
+  <p><b> Mac: </b> <a href=""> not yet available </a> </p>
+  <p><b> Windows: </b> <a href=""> not yet available </a> </p>
+  </div>
+  <div class="column">
+    <p><img src="https://kaleb.ruscitti.ca/images/card.png"
+    width=480></p>
+  </div>
+</div>
 </body>
