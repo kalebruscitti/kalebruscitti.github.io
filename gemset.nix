@@ -61,6 +61,16 @@
     };
     version = "1.2.7";
   };
+  execjs = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "03a590q16nhqvfms0lh42mp6a1i41w41qpdnf39zjbq5y3l8pjvb";
+      type = "gem";
+    };
+    version = "2.10.0";
+  };
   ffi = {
     groups = ["default"];
     platforms = [];
@@ -157,6 +167,17 @@
     };
     version = "2.2.1";
   };
+  katex = {
+    dependencies = ["execjs"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1sx6px7pgj0ggxns1n69j3icg7nf0paagprmrf425d5pk3fn0wzi";
+      type = "gem";
+    };
+    version = "0.10.0";
+  };
   kramdown = {
     dependencies = ["rexml"];
     groups = ["default"];
@@ -167,6 +188,17 @@
       type = "gem";
     };
     version = "2.5.1";
+  };
+  kramdown-math-katex = {
+    dependencies = ["katex" "kramdown"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1p2cn05pk26lixbag0hvvyxz9b4hizl1hz8hwawlkv6mzscv46bi";
+      type = "gem";
+    };
+    version = "1.0.1";
   };
   kramdown-parser-gfm = {
     dependencies = ["kramdown"];

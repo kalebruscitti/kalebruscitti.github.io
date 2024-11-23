@@ -13,6 +13,8 @@ url:  "kaleb.ruscitti.ca" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: katex
 # Sass settings
 sass:
   style: compressed

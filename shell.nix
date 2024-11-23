@@ -9,8 +9,9 @@ in stdenv.mkDerivation{
         name = "website";
 	nativeBuildInputs =[
 	        gems
-                ruby
-                rubyPackages.webrick
+          ruby
+          rubyPackages.webrick
+          nodejs
         ];
         shellHook = ''
 	zsh
