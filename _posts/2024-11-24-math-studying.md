@@ -3,29 +3,33 @@ layout: post
 title: "Studying for Undergraduate Mathematics Exams"
 ---
 
-Studying for Undergraduate Mathematics Exams
-=============================================
-
 Undergraduate mathematics is quite different from high school math, at least here
-in Canada. Many of the study habits that let you get good grades there don't
-translate over to university, and so many people struggle in first year,
-*especially* with math courses.
+in Canada. Study habits that give good grades in high school don't translate
+well to university, *especially* for mathematics courses.
 
 I did my bachelor's degree in physics, with a math minor, and am now a PhD
-student in math. As an undergraduate, I developed a system for studying for math (and math-heavy courses like physics)
-which let me do pretty well, and now that I see the courses from the teaching side I
-have refined it further. I've been sharing parts of this technique with students
-who ask for advice, and so it makes sense to just share it online for anyone to
-try.
+student in math. Over the first few years as an undergraduate, I learned how
+to study for math (and math-heavy courses like physics) in a way that let me do
+pretty well. Now I have another perspective, having taught and graded math
+courses at McGill and UW. These experiences inform the method that I am laying
+out here.
+
+As many students have asked me for help learning how to learn and study in their
+math courses, I have had to formalize my learned method more and more, and have
+decided it makes sense to simply share it online for anyone to try.
 
 Even the most noble students care about getting good grades. The goal of this
 study programme is to find a balance between optimizing for the
 highest grade, and optimizing for long-term, deep understanding of the
-mathematics.
+mathematics. There is a happy correlation between understanding the material and
+getting good grades!
 
-This method also tries to order your studying from most-to-least efficient,
-meaning the first steps have the best effort-to-grades and effort-to-learning
-ratio.
+Finally, this method aims to front-load the work that gives you the best payoff
+for your effort. If you're reading this the night before an important exam,
+getting through only the first step or two will put you much better off. The
+later steps have diminishing returns - often the hardest problems on an exam are
+worth only 10-20% of the grade.
+
 
 Step 1: Definitions
 ------------------------
@@ -38,8 +42,9 @@ memorizing definitions is a highly efficient way to begin studying for a math co
 
 Begin by skimming through your course or lecture notes, and making a list of all
 the definitions in the course. For example, in a first calculus class, this
-might include `convergent sequence, cauchy sequence, continuous at x, derivative
-f'(x), even function, odd function,...`.
+might include
+> convergent sequence, cauchy sequence, continuous at x, derivative
+> f'(x), even function, odd function,...
 
 Then, for each item in your list, find the definition and write it down, in
 full. For example, you should be able to write "A sequence $\{x_i\}$ in
@@ -53,7 +58,7 @@ definitions will depend on earlier definitions.
 One problem I see students fall into, is forgetting the original definition of
 something, in favour of a simpler characterization given by some theorem. For
 example, the *definition* of `f is increasing` is "for all
-$y>x$, $f(y)>f(x)$", but many students will say f is increasing is "$f'(x)>0$".
+$y>x$, $f(y)>f(x)$", but many students will say f is increasing is "$f^\prime(x)>0$".
 This latter statement is a *theorem* which is usually true, but not always.
 At least at the University of Waterloo, there are often questions on assessments
 designed to fit into the edge cases, testing if students know the proper
@@ -74,7 +79,7 @@ Thus, we need some method to determine the *key* theorems in the course.
 
 To do this, we're going to make another pass over the course material. This
 time, you want to make a list of theorems. Theorems with names, like
-`Intermediate Value Theorem` are clearly important, but many key theorems do not
+*Intermediate Value Theorem* are clearly important, but many key theorems do not
 have names, such as `If f is differentiable at a, then f is continuous at
 a.`
 
@@ -91,11 +96,11 @@ Now, the *key theorems* are the ones that appear in many types of question. Just
 like with the definitions, you should now go and write down all the key theorems
 in full. Make sure you write down the *hypotheses* of the theorem, and not just
 the conclusion. For example, when I ask students to tell me the Mean Value
-Theorem, many say "$f'(c) = \frac{f(b)-f(a)}{b-a}$". This is only the conclusion;
+Theorem, many say "$f^\prime(c) = \frac{f(b)-f(a)}{b-a}$". This is only the conclusion;
 the full theorem is
 
 "Let $f$ be continuous on $[a,b]$ and differentiable on
-$(a,b)$, $a<b$. Then there exists $c\in(a,b)$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$."
+$(a,b)$, $a<b$. Then there exists $c\in(a,b)$ such that $f^\prime(c)=\frac{f(b)-f(a)}{b-a}$."
 
 Knowing the hypothesis is critical for true and false or multiple choice
 questions -- often the answer boils down to checking the hypotheses for a
@@ -127,33 +132,35 @@ that apply to that problem type, and if their hypotheses hold in your problem.
 
 Let me show you one example of this approach.
 
-Question: Let $f(x)$ be differentiable on $\mathbb{R}$. Furthermore, let $f(x)$
-be positive and concave up. Then show that $g=(f(x))^2$ is concave up.
+>Question: Let $f(x)$ be differentiable on $\mathbb{R}$. Furthermore, let $f(x)$
+>be positive and concave up. Then show that $g=(f(x))^2$ is concave up.
 
 To solve this, we begin by writing all the definitions:
 
 We know:
 
-$f$ diff'able - $f'(x)$ exists for all $x\in\mathbb{R}$
-
-$f$ positive - $f(x) > 0$
-
-$f$ concave up - $f''(x) > 0$
-
-$g = f^2$
+>$f$ diff'able - $f^{\prime}(x)$ exists for all $x\in\mathbb{R}$
+>
+>$f$ positive - $f(x) > 0$
+>
+>$f$ concave up - $f^{\prime\prime}(x) > 0$
+>
+>$g = f^2$
 
 and we need to prove:
 
-$g$ concave up - $g''(x) >0$.
+>$g$ concave up - $g^{\prime\prime}(x) >0$.
 
 Now its clear that the question is asking us to show $g''(x) >0$. So far, we may
 not see how to do the problem, or why we need all these conditions on $f$, but
 we have a clear starting point -- compute $g''(x)$.
+
 $$g'' = (f^2)'' = (2f(x)f'(x))' = 2(f'(x))^2 + 2f(x)f''(x)$$
-We suddenly have $f'(x)$, $f'(x)$ and $f''(x)$ showing up! Now it is obvious
-how we need to use the conditions in the question. We use $f''(x)>0$ and
-$f(x)>0$ to say $2f(x)f''(x)>0$, and we know any real number squared is
-positive. Thus we can conclude $g''(x) >0$, finishing the problem.
+
+We suddenly have $f^\prime(x)$, $f^\prime(x)$ and $f^{\prime\prime}(x)$ showing up! Now it is obvious
+how we need to use the conditions in the question. We use $f^{\prime\prime}(x)>0$ and
+$f(x)>0$ to say $2f(x)f^{\prime\prime}(x)>0$, and we know any real number squared is
+positive. Thus we can conclude $g^{\prime\prime}(x) >0$, finishing the problem.
 
 Bonus Step 4: Understanding Proofs
 ----------------------------------------
