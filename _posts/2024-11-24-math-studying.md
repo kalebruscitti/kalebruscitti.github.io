@@ -37,7 +37,7 @@ Step 1: Definitions
 The easiest and most important step to studying mathematics is to understand
 definitions. Many problems on quizzes and exams simply boil down to writing the
 definition of everything in the problem, and then performing some very simple
-algebraic manipulation. Although memorization is anathema to mathematics students,
+algebraic manipulation. Although memorization is anathema to math students,
 memorizing definitions is a highly efficient way to begin studying for a math course.
 
 Begin by skimming through your course or lecture notes, and making a list of all
