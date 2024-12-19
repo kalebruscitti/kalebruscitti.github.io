@@ -1,13 +1,14 @@
 ---
 layout: post
-title: LLMs as a Search Interface for Mathematics Research 
+title: LLMs as a Search Interface for Mathematics Research
 ---
 ### Contents
 1. [Searching for Evidence with Perplexity](#evidence-search)
 2. [An Example](#an-example)
 3. [Effective Usage Requires Expertise](#expertise)
-4. [Hallucination Risks and Responsible Usage](#responsible-usage)
-5. [Conclusion](#conclusion)
+4. [Limitations and Room for Improvement](#limitations)
+5. [Hallucination Risks and Responsible Usage](#responsible-usage)
+6. [Conclusion](#conclusion)
 
 Over the last 6 weeks, I have been using [Perplexity](https://perplexity.ai) as a search
 engine to help me with my PhD research. I have been very impressed with how
@@ -33,7 +34,7 @@ for goals, possibilities, and evidence, and using the evidence to **infer**
 For me, thinking about mathematics research roughly looks like:
 1. Find a goal, which can be a vague research goal or a specific lemma to
        prove.
-2. Search for possible approaches that could solve the goal. 
+2. Search for possible approaches that could solve the goal.
 3. For each approach, look for evidence that it could succeed or fail. For
        example, this could be papers that use the approach to solve similar
        problems.
@@ -46,7 +47,7 @@ imagine it being useful for step 2 as well, but I haven't tried it very much
 yet.
 
 #### An Example
-Now let me give a specific example, and show how Perplexity helped me with 
+Now let me give a specific example, and show how Perplexity helped me with
 step 3. The *Grauert Direct Image Theorem* tells us when there is an isomorphism
 between fibres of a flat family of coherent sheaves. In my current project, I
 am using this theorem to show two vector spaces are isomorphic, but the
@@ -94,7 +95,7 @@ sections plays an important role in the problem I am studying. Before jumping
 into the references to understand exactly what was meant, I decided to ask for a
 bit more clarification: `Point 2 in your response is interesting. If I have a
 coherent sheaf over a scheme, can I evaluate sections of that sheaf using
-residue fields?` 
+residue fields?`
 
 In response to this, I got a mathematical explanation of how to use the residue
 field to evaluate sections. This is where it is important to be responsible --
@@ -102,7 +103,7 @@ LLMs are not built to accurately do technical mathematics. However, in this
 case, I've seen this construction before, and I know enough to be comfortable
 that the answer is correct enough to accept. **Critically** when I wrote up this
 section of my paper, I went to the original sources and worked through the steps
-myself, to ensure that they're correct. 
+myself, to ensure that they're correct.
 
 #### Effective Use Requires Expertise {#expertise}
 
@@ -110,7 +111,7 @@ In my experience, this tool is more of a force-multiplier then something which
 solves problems on its own. The domain-expertise of the human operator is a key
 component of using Perplexity effectively. I find it most effective for two
 specific types of query, both very common in my research:
-1. *Reminding me of technical details*. 
+1. *Reminding me of technical details*.
     Often I come across a situation where I know that I've learned some
     mathematical results which may be useful for my goal, but I can't remember
     the specific details. Perplexity can very quickly find the exact statement
@@ -139,6 +140,28 @@ For these reasons, if you're just beginning your research journey in math or
 science, I strongly suggest that you avoid using LLM/AI tools and focus instead
 on building your own expertise, at least while you're doing course work.
 
+### Limitations & Room for Improvement {#limitations}
+
+One caveat to all the praise I've given LLM search this far, is that it only
+really works for very well-known mathematics. If the result you need is "in the
+standard literature" then the LLM will find it. However, Perplexity's search
+does not have access to the primary sources. The major reference textbooks, and
+more importantly, preprints and peer-reviewed publications, are not readily
+available to LLM search.
+
+Instead, the results that Perplexity sorts through are human-made secondary
+material like course notes, presentation slides and StackOverflow posts. For
+more niche questions, the result you seek may be in the literature, but if
+nobody has posted about it online, Perplexity won't find it.
+
+In principle, the concept of LLM search could be combined with advances in
+machine-learning for topic modeling to build a really powerful tool for
+searching the literature. I am envisioning using LLM vectorizers and then tools
+like UMAP and HDBSCAN to get some semantic-embedding of all the papers on arXiv,
+and then using this as a database for the retrieval that Perplexity performs.
+I'd be surprised if someone is not already working on this.
+
+
 ### Hallucination Risks and Responsible Usage {#responsible-usage}
 
 I would be remiss to speak positively about the usage of LLM tools in academia
@@ -156,7 +179,7 @@ you found, with the original sources.
 Compared with other LLM tools like ChatGPT, Perplexity makes responsible use
 easier, which is why I am much more optimistic about it than other tools I've
 tried. It seems that Perplexity has some safeguards against hallucinations -- in
-the search session about Grauert's theorem above, I asked 
+the search session about Grauert's theorem above, I asked
 `How does $phi_p$ (the isomorphism) act on a single element?`, and got a very
 wordy reply that essentially said `I don't know, I can't find it in the search results.`
 
