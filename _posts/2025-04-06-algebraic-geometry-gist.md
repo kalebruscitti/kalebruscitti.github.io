@@ -113,11 +113,13 @@ $$\quad y(x+1) \equiv y(0+1) = y.$$
 
 Thus, all of these functions are equal to $y$ modulo $x$. We say they are *in the equivalence class of* $y$. This tells us that the set of polynomial functions on $V(f)$, for $f\in k[x_1,...,x_n]$ is exactly $k[x_1,...,x_n]/\langle f \rangle$.
 
-With this, we have our putative correspondance between algebraic varieties of $k^n$ and ideals $I$ inside the polynomial ring $k[x_1,...,x_n]$: we send the ideal $I=\langle f_1,...,f_n \rangle$ to the vanishing locus $V(I)$, and we send a variety $V$ to its ring of polynomial functions. However, there is one outstanding issue...
+With this, we have our putative correspondance between algebraic varieties of $k^n$ and ideals $I$ inside the polynomial ring $k[x_1,...,x_n]$: we send the ideal $I=\langle f_1,...,f_n \rangle$ to the vanishing locus $V(I)$, and we send a variety $V$ to its ring of polynomial functions. However, there is one[^1] outstanding issue...
+
+[^1]: There is a second outstanding issue when $k$ is not an algebraically closed field, which is resolved by passing to *schemes*.
 
 Consider the polynomials $x$ and $x^2$ in $\mathbb{R}[x,y]$. The vanishing loci $V(x)$ and $V(x^2)$ are exactly the same, since $x=0$ if and only if $x^2=0$! This breaks our correspondence, since we have two ideals $\langle x\rangle$ and $\langle x^2\rangle$ mapping to the same vanishing locus. There are two solutions to this. The classical solution is to require that algebraic varieties are *reduced*, which would rule out $x^2$ -- more on this in the afterword. However the modern approach is to recognize that a variety is more than just the *set* $V(I)$. It is the *pair* of the set $V(I)$ with the ring $k[x_1,...,x_n]/I$.
 
-Finally, every geometric property of $V(I)$ has an analogue in terms of the ring $k[x_1,...,x_n]/I$. Continuous maps $V(I)\to V(J)$ correspond to ring maps $k[x_1,...,x_n]/J \to k[x_1,...,x_n]/I$ -- notice that $I$ and $J$ swapped sides. Restricting to open sets inside $V(I)$ corresponds to an operation called *localizing* the ring. From a computational perspective, this is very appealing, because manipulating polynomial rings is much more natural for computer implementations than manipulating geometric spaces.
+Finally, every geometric property of $V(I)$ has an analogue in terms of the ring $k[x_1,...,x_n]/I$. Maps $V(I)\to V(J)$ correspond to ring maps $k[x_1,...,x_n]/J \to k[x_1,...,x_n]/I$ -- notice that $I$ and $J$ swapped sides. Restricting to open sets inside $V(I)$ corresponds to an operation called *localizing* the ring. From a computational perspective, this is very appealing, because manipulating polynomial rings is much more natural for computer implementations than manipulating geometric spaces.
 
 ### Afterword: Irreducible and Reduced {#afterword}
 
