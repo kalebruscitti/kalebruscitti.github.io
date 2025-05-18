@@ -38,7 +38,7 @@ layout: default
     many online tutorials. The art for all the pieces and cards was also done by
     myself, and the audio is all placeholders taken from royalty-free sites.</p>
    <h3 id="download">Download</h3>
-  <p>On Sept 14th at 5pm EST, download links will be available here.</p>
+   <p>Download version <b id='version'></b> for your platform:  </p>
   <p><b> Linux: </b> <a href="/bcg/battlecard_galactica_linux_x86_64.zip"> alpha 1.0 generic x86_64 </a></p>
   <p><b> Mac: </b> <a href="/bcg/BattlecardGalactica_mac.zip"> alpha 1.3 .app </a> </p>
   <p><b> Windows: </b> <a href="/bcg/battlecard_galactica_win_x86_64.zip"> alpha 1.3 x86_64 </a> </p>
@@ -51,32 +51,14 @@ layout: default
 </body>
 
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("September 14, 2024 17:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = "Alpha I: \&emsp;"+ days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "Alpha I Available Below!";
+  function loadTextFile(filePath, elementId) {
+    fetch(filePath)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById(elementId).textContent = data;
+      })
+      .catch(error => console.error('Error fetching text file:', error));
   }
-}, 1000);
+
+  loadTextFile('/bcg/version.txt', 'version');
 </script>
