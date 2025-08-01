@@ -28,12 +28,12 @@ email: kaleb@ruscitti.ca
 navigation:
   - text: Home
     url: /
-  - text: Articles
-    url: /articles
   - text: Curriculum Vitae
     url: /resume
-  - text: Research
+  - text: Projects
     url: /research
+  - text: Writing
+    url: /articles
   - text: Contact
     url: /contact
   - text: Collection
