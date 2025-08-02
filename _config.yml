@@ -30,8 +30,6 @@ navigation:
     url: /
   - text: Curriculum Vitae
     url: /resume
-  - text: Projects
-    url: /research
   - text: Writing
     url: /articles
   - text: Contact
