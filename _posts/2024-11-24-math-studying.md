@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Studying for Undergraduate Mathematics Exams"
+title: Studying for Undergraduate Mathematics Exams
+abstract: How to study for math exams, balancing long-term learning and short-term grade maximizing. 
 ---
 
 Undergraduate mathematics is quite different from high school math, at least here

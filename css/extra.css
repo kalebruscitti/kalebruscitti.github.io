@@ -19,3 +19,55 @@ code.highlighter-rouge.language-plaintext{
     background-color:var(--background);
     color:var(--textcolor);
 }
+
+.posts-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post-item {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.post-date {
+    min-width: 120px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    padding-top: 8px;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-title {
+    background-color: #1C1C1C;
+    color: var(--textcolor);
+    padding: 3px 4px;
+    margin: 0 0 2px 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.post-title:hover {
+    background-color: #006d1f; 
+    color: var(--textcolor);
+    text-decoration: none;
+}
+
+.post-abstract {
+    background-color: #006d1f6e; 
+    padding: 12px 16px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--textcolor); 
+}

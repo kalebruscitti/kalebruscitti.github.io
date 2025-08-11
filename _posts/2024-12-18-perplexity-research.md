@@ -1,6 +1,7 @@
 ---
 layout: post
 title: LLMs as a Search Interface for Mathematics Research
+abstract: My initial impressions on using LLM search tools to help with my PhD research.
 ---
 ### Contents
 1. [Searching for Evidence with Perplexity](#evidence-search)

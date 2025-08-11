@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Gist of Algebraic Geometry
+abstract: A primer on Algebraic Geometry for those with only first-year mathematics.
 ---
 ### Contents
 1. [Intended Audience](#ia)
