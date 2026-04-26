@@ -1,0 +1,36 @@
+<footer class="t-hackcss-footer">
+  <hr />
+
+  <div class="grid t-hackcss-sm-reversed-grid">
+
+    <div class="cell -6of12">
+      <div class="contact-list">
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <br>
+        {% for social in site.social %}
+          <span class="t-hackcss-social">
+            <a href="{{ social.link }}">{{ social.service }}</a>
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="cell -5of12">
+      <p>{{ site.description }}</p>
+    </div>
+  </div>
+<!-- Parse the Latex divs with Katex-->
+<script type="text/javascript">
+  $("script[type='math/tex']").replaceWith(
+    function(){
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+
+  $("script[type='math/tex; mode=display']").replaceWith(
+    function(){
+      var tex = $(this).text();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
+
+</footer>

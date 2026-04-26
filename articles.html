@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<style>
+.column{
+  float: left;
+  width: 50%;
+}
+.row:after{
+  content:"";
+  display: table;
+  clear: both;
+}
+</style>
+<section>
+  <h1> Writing </h1>
+  <p> This page has an RSS feed: <a href=https://kaleb.ruscitti.ca/feed.xml>https://kaleb.ruscitti.ca/feed.xml</a></p>
+  <div class="posts-container">
+      {% for post in site.posts %}
+      <div class="post-item">
+          <div class="post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+          <div class="post-content">
+              <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+              <div class="post-abstract">{{ post.abstract }}</div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+
+</section>

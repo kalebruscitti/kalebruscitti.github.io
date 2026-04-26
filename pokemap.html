@@ -1,0 +1,43 @@
+<html>
+<head>
+  <link rel="stylesheet" href="css/extra.css">
+<style>
+html:{
+  margin = auto;
+}
+</style>
+</head>
+<section>
+  <h1> Pok&eacute;Map </h1>
+  <h3> A datamap of all 1025 pok&eacute;mon,
+    clustered by type, abilities, stats and moves.
+  </h3>
+  <p> Data obtained from
+  <a href="https://pokeapi.co/"> PokeAPI </a>. <br>
+    </p>
+<div style="position:relative; width:80%; height:70%; margin:auto;">
+<iframe
+  src="./pokemap_data.html"
+  title="PokeMap"
+  style="position:absolute;width:100%;height:100%"
+>
+</iframe>
+</div>
+  <p> Some notes: <br>
+  1. Move data is taken across all generations, so
+  a move is included for a pokemon if it learned it at
+  any point. <br>
+  2. Cluster labels were made by manually eyeballing the 'mons in a
+  cluster and picking a fitting word. <br>
+  3. Point size is proportional to a 'mon's base stat total.
+  <br>
+  The visualization was made with
+  <a href="https://github.com/TutteInstitute/datamapplot">
+    datamapplot</a>,
+  <a href="https://github.com/lmcinnes/umap"> UMAP</a>,
+  and the python library
+  <a href="https://github.com/TutteInstitute/vectorizers">
+    vectorizers</a>.
+  To see the code that generated this plot, check out <a href=https://github.com/kalebruscitti/PokeMap>the github repo. </a>
+  </p>
+</html>

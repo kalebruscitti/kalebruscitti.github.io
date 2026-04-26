@@ -1,0 +1,37 @@
+# Site settings
+title: Kaleb Ruscitti
+description: "I do math kind of."
+baseurl: "" # the subpath of your site, e.g. /blog
+url:  "kaleb.ruscitti.ca" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+kramdown:
+  math_engine: katex
+# Sass settings
+sass:
+  style: compressed
+
+# Theme settings
+theme_mode: standard  # choices are: 'dark', 'standard', 'markdown'
+
+# Customizations
+email: kaleb@ruscitti.ca
+
+navigation:
+  - text: Home
+    url: /
+  - text: Curriculum Vitae
+    url: /resume
+  - text: Writing
+    url: /articles
+  - text: Contact
+    url: /contact
+  - text: Collection
+    url: /links
+
+social:
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
