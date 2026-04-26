@@ -151,7 +151,7 @@ to{transform:rotate(1turn)}
 }
 .menu{width:100%}
 .menu .menu-item{display:block;color:var(--textcolor);border-color:var(--textcolor);margin-right:1em;}
-.menu .menu-item.active,.menu .menu-item:hover{color:var(--highlight);border-color:var(--highlight);background-color:transparent}
+.menu .menu-item:hover{color:var(--lowlight);border-color:var(--textcolor);}
 @media screen and (max-width:768px){.form-group label{display:block;border-bottom:none;width:100%}
 .form-group.form-textarea label:after{display:none}
 .form-control{width:100%}
