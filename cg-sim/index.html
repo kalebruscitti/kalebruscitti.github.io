@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corrupted Hunllef Simulator</title>
+  <link rel="stylesheet" href="/css/cg-sim.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@sgratzl/chartjs-chart-boxplot"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Corrupted Hunllef Fight Simulator</h1>
+      <p>
+        How much does defense matter? Should I do T1 or T2 prep? Answer these questions 
+        by entering your own stats into this tool!
+
+        For a detailed explaination, see: (link to blog post here)
+      </p>
+    </header>
+
+    <section class="inputs">
+      <h2>Player Stats</h2>
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="magicLevel">Magic Level</label>
+          <input type="number" id="magicLevel" value="90" min="1" max="99" />
+        </div>
+        <div class="input-group">
+          <label for="rangedLevel">Ranged Level</label>
+          <input type="number" id="rangedLevel" value="90" min="1" max="99" />
+        </div>
+        <div class="input-group">
+          <label for="defenseLevel">Defense Level</label>
+          <input type="number" id="defenseLevel" value="85" min="1" max="99" />
+        </div>
+        <div class="input-group">
+          <label for="prayer">Prayer</label>
+          <select id="prayer">
+            <option value="cox" selected>Rigour / Augury</option>
+            <option value="titans">Deadeye/Mystic Vigour</option>
+          </select>
+        </div>
+      </div>
+
+      <h2>Performance Metrics</h2>
+      <div class="preset-row">
+        <span class="preset-label">Presets:</span>
+        <button class="preset-btn" onclick="applyPreset('learner')">Learner</button>
+        <button class="preset-btn" onclick="applyPreset('proficient')">Proficient</button>
+        <button class="preset-btn" onclick="applyPreset('perfect')">Perfect</button>
+      </div>
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="ticksUsed">Ticks Used (0-1)</label>
+          <input type="number" id="ticksUsed" value="0.9" min="0" max="1" step="0.05" />
+        </div>
+        <div class="input-group">
+          <label for="wrongOverhead">Wrong Overheads</label>
+          <input type="number" id="wrongOverhead" value="2" min="0" max="50" />
+        </div>
+        <div class="input-group">
+          <label for="wrongStyle">Wrong Attack Style</label>
+          <input type="number" id="wrongStyle" value="2" min="0" max="50" />
+        </div>
+        <div class="input-group">
+          <label for="tornadoHits">Tornado Hits</label>
+          <input type="number" id="tornadoHits" value="4" min="0" max="50" />
+        </div>
+        <div class="input-group">
+          <label for="nSims">Number of Simulations</label>
+          <input type="number" id="nSims" value="100" min="1" max="10000" />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="runSimBtn" onclick="runMainSimulation()">Run Simulation</button>
+        <button class="sweep-btn" onclick="runDefenseSweep()">Sweep Defense</button>
+        <button class="sweep-btn" onclick="runCombatSweep('ranged')">Sweep Ranged</button>
+        <button class="sweep-btn" onclick="runCombatSweep('magic')">Sweep Magic</button>
+      </div>
+    </section>
+
+    <section class="results">
+      <h2>Simulation Results</h2>
+
+      <div id="mainLoading" class="loading" style="display: none;">
+        Running simulations...
+      </div>
+
+      <div id="mainResults" style="display: none;">
+        <div class="stats-row">
+          <div class="stat-card">
+            <h3>Avg Damage Taken</h3>
+            <div class="stat-line">T1: <span id="t1AvgDamage"></span></div>
+            <div class="stat-line">T2: <span id="t2AvgDamage"></span></div>
+            <div class="stat-line highlight">Difference of averages: <span id="damageDiff"></span></div>
+          </div>
+          <div class="stat-card">
+            <h3>Avg Time Taken</h3>
+            <div class="stat-line">T1: <span id="t1AvgTime"></span></div>
+            <div class="stat-line">T2: <span id="t2AvgTime"></span></div>
+            <div class="stat-line highlight">On average T2 saves: <span id="timeSaved"></span></div>
+          </div>
+        </div>
+
+        <div class="charts-row">
+          <div class="chart-container">
+            <canvas id="damageChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="timeChart"></canvas>
+          </div>
+        </div>
+
+        <h3 style="color: #e94560; margin: 24px 0 12px 0; font-size: 1.1rem; border-bottom: 1px solid #0f3460; padding-bottom: 8px;">KC Time Calculator</h3>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="t1Winrate">T1 Winrate (0-1)</label>
+            <input type="number" id="t1Winrate" value="1" min="0" max="1" step="0.01" />
+          </div>
+          <div class="input-group">
+            <label for="t2Winrate">T2 Winrate (0-1)</label>
+            <input type="number" id="t2Winrate" value="1" min="0" max="1" step="0.01" />
+          </div>
+          <div class="input-group">
+            <label for="t1PrepTime">T1 Prep Time (seconds)</label>
+            <input type="number" id="t1PrepTime" value="270" min="0" step="1" />
+          </div>
+          <div class="input-group">
+            <label for="t2PrepTime">T2 Prep Time (seconds)</label>
+            <input type="number" id="t2PrepTime" value="360" min="0" step="1" />
+          </div>
+          <div class="input-group">
+            <label for="kcInput">KC (number of wins)</label>
+            <input type="number" id="kcInput" value="50" min="1" step="1" />
+          </div>
+        </div>
+        <div class="button-row">
+          <button id="calcKcBtn" onclick="calculateKC()">Calculate</button>
+        </div>
+        <div id="kcResults" class="stats-row" style="margin-top: 16px; display: none;">
+          <div class="stat-card">
+            <h3>T1 Prep</h3>
+            <div class="stat-line">Expected Runs: <span id="t1ExpectedRuns"></span></div>
+            <div class="stat-line">Total Time: <span id="t1TotalTime"></span></div>
+          </div>
+          <div class="stat-card">
+            <h3>T2 Prep</h3>
+            <div class="stat-line">Expected Runs: <span id="t2ExpectedRuns"></span></div>
+            <div class="stat-line">Total Time: <span id="t2TotalTime"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Defense Level Sweep</h2>
+
+      <div id="defenseLoading" class="loading" style="display: none;">
+        Running defense sweep (this may take a moment)...
+      </div>
+
+      <div id="defenseResults" style="display: none;">
+        <div class="stats-row">
+          <div class="stat-card">
+            <h3>Damage Saved per Defense Level</h3>
+            <div class="stat-line">T1 Prep: <span id="t1DefSlope"></span></div>
+            <div class="stat-line">T2 Prep: <span id="t2DefSlope"></span></div>
+          </div>
+        </div>
+        <div class="chart-container wide">
+          <canvas id="defenseChart"></canvas>
+        </div>
+      </div>
+
+      <h2>Combat Level Sweep</h2>
+
+      <div id="combatSweepLoading" class="loading" style="display: none;">
+        Running combat level sweep (this may take a moment)...
+      </div>
+
+      <div id="combatSweepResults" style="display: none;">
+        <div class="stats-row">
+          <div class="stat-card">
+            <h3>Time Change per Level</h3>
+            <div class="stat-line">T1 Prep: <span id="t1CombatSlope"></span></div>
+            <div class="stat-line">T2 Prep: <span id="t2CombatSlope"></span></div>
+          </div>
+        </div>
+        <div class="chart-container wide">
+          <canvas id="combatSweepChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/js/simulation.js"></script>
+  <script src="/js/ui.js"></script>
+</body>
+</html>
