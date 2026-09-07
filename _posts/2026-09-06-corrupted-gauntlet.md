@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Statistical Analysis of the Hunllef Fight"
+abstract: DPS, effect of combat levels, and T1 vs T2 prep for Corrupted Gauntlet.
 ---
 
 
