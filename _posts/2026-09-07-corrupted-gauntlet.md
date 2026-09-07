@@ -1,15 +1,14 @@
 ---
 layout: post
 title: "Statistical Analysis of the Hunllef Fight"
-abstract: DPS, effect of combat levels, and T1 vs T2 prep for Corrupted Gauntlet.
+abstract: An analysis of T1 versus T2 prep, the importantance of combat stats, and the effect of player skill on the fight time.
 ---
 
-
-With the [2026 Summer Sweep Up](https://oldschool.runescape.wiki/w/Update:Summer_Sweep-Up_2026) changing Corrupted Gauntlet's preparation phase, I decided to start my Corrupted Gauntlet grind in [Old School Runescape](https://oldschool.runescape.com/), and like any good MMO playing mathematician, I wanted to optimize my performance as much as possible. 
+With the [2026 Summer Sweep Up](https://oldschool.runescape.wiki/w/Update:Summer_Sweep-Up_2026) changing Corrupted Gauntlet's preparation phase, I decided to start my Corrupted Gauntlet grind in Old School Runescape, and like any good MMO playing mathematician, I wanted to optimize my performance as much as possible. 
 To do this, I've used the [Gauntlet Performance Tracker](https://runelite.net/plugin-hub/show/gauntlet-performance-tracker) RuneLite plugin to save various performance metrics about my runs, allowing me to analyze them. 
-I've also written a Hunllef fight simulator, so that I can measure how much the different factors in the fight affect the average fight time.
+I've also written a [Hunllef fight simulator](/cg-sim/), so that I can measure how much the different factors in the fight affect the average fight time.
 
-Using this combination of empirical and theoretical analysis, I can give an answer to the following questions:
+Using this combination of empirical and theoretical analysis, we can find an informed answer to the following questions:
 
 - [How much does player skill affect DPS?](#player-skill-and-dps)
 - [Should you do T1 or T2 Prep?](#should-you-do-t1-or-t2-prep)
@@ -17,18 +16,20 @@ Using this combination of empirical and theoretical analysis, I can give an answ
 - [Does Defense level Matter?](#do-defense-levels-matter)
 - [How much GP/hr is realistic while learning CG?](#gold-per-hour)
 
+The answers I came to won't be shocking to any experienced OSRS PvMers, as they align with conventional wisdom that I've seen on Reddit and YouTube. 
+Despite that, getting at these answers in a more rigourous fashion can help mathematically-minded players like me get a better understanding of PvM mechanics.
 
-Most of the answers back up the conventional wisdom one will find on Reddit threads and YouTube video guides discussing the Corrupted Gauntlet.
 
 ## Empirical Data
 
 To start my grind, I did 49 successful runs (KC) with T2 prep (Tier 2 armor + two Tier 3 weapons). 
 This took a total of 74 runs, not counting the runs I did in January to get my first 1KC after unlocking the Gauntlet initially, which were not tracked.
 These runs took place between August 22nd and September 5th, with a median of 8 runs a day on the days that I played Runescape.
-My character's combat stats are 84 Attack, 87 Strength, 89 Ranged, 83 Defense, 84 Magic and 77 Prayer, and I am using the Rigour and Augury prayers. 
+My character's combat stats were 84 Attack, 87 Strength, 89 Ranged, 83 Defense, 84 Magic and 77 Prayer, and I have both Rigour and Augury. 
+I've since swapped to T1 prep runs, but as I've only done 14 T1 runs so far I haven't included this data for analysis.
 
 ### Estimated Winrate
-The first statistic we can look at is the estimated probability that I will win the next run:
+The first statistic we can look at is the estimated probability that I will win the next run. Improving your winrate is the most effective way to reduce the length of your Gauntlet grind, since every lost run is a wasted ~9-11 minutes.
 
 <figure float="center">
   <img src="{{site.baseurl}}/images/Winrate.png" width="80%"/>
@@ -39,6 +40,33 @@ At the beginning of the dataset, I wasn't very familiar with the Hunllef fight, 
 As you'd expect, as I got more experienced my winrate climbed, with the final estimate being that I have an 87% chance of winning my next CG run. I expect that if I continued for another 10-20 runs, this winrate would probably begin to plateau somewhere around 90%.
 
 For difficult content like the Gauntlet, I find that trying to push my winrate higher and higher is a really great motivator. If you go 50 KC with no armor seed drop, it can feel like the 50 KC was pointless (I was not so unlucky). But when you see how much your winrate has improved over that 50 KC, it helps you realize how much quicker the next 50 KC will be.
+
+### Defensive Performance
+
+  For our simulator, I want to get some statistics on the defensive performance of a learner (i.e. me for the first ~20 KC) and a proficient player (i.e. me for the rest of the data). 
+  The first thing we can look at is the DPS taken in each fight, which goes down consistently as I improved.
+
+  <figure float="center">
+    <img src="{{site.baseurl}}/images/DPS taken.png" width="80%"/>
+    <figcaption> DPS taken during each Hunllef fight. Colour indicates whether the run was won or lost. </figcaption>
+  </figure>
+
+For the simulator, I want to have some empirical averages for the defensive performance of a leaning player and a proficient player. I'll use the data from my first 30 runs for the learning player, and the data from my last 30 runs as the proficient player. 
+For the first 30 runs, here is are the averages of my defensive performance:
+
+|        | Wrong defensive prayer | Tramples | Tornado hits | Floor tile hits |
+|--------|------------------------|----------|--------------|-----------------|
+| Median |            3           |     0    |       3      |        1        |
+| Mean   |          3.53          |   0.70   |     4.30     |       1.40      |
+
+  And here are the averages for my last 30 runs:
+
+|        | Wrong defensive prayer | Tramples | Tornado hits | Floor tile hits |
+|--------|------------------------|----------|--------------|-----------------|
+| Median |            0           |    0    |       1      |        1        |
+| Mean   |          0.77          |   0.25   |     2.45     |       1.45      |
+
+This gives us two nice presets for our simulator, as well as a 'perfect play' preset representing no defensive mistakes.
 
 ## Fight Simulator
 
@@ -57,7 +85,7 @@ The Hunllef has a 5 tick attack speed, but it does a stomp when it summons torna
 
 Although this is an approximation of a proper fight simulator, when I use my own player combat levels, the output statistics of the simulator match my empirical statistics well. One big limitation is that I haven't implemented melee attacks for the player. After implementing attack roll calculations for magic and ranged and then manually punching in all the stats of Hunlleff and the crystal weapons, I didn't feel like doing a *third* combat style. I only rarely used the Halberd during my runs so far, so it doesn't feel worth the effort.
 
-If you want to use the simulator to follow along with the article, it is available [here](/cg-sim/) (the webpage was vibe coded but the simulator itself was not).
+If you want to use the simulator to follow along with the article, [it is available here](/cg-sim/) (the webpage was vibe coded but the simulator itself was not).
 
 
 ## Player Skill and DPS
@@ -95,7 +123,7 @@ Short answer: **Do T2 for the first ~50 KC**, and swap to T1 if you've gotten ve
 
 One important factor affecting your Gauntlet grind is whether to make Tier 1 armor (T1 Prep) or Tier 2 armor (T2 Prep). Before the Summer Sweep Up changes, the online consensus seems to be that T1 prep saves 1min 30s-2min over T2 prep, though in my experience after the Sweep Up changes, it is closer to 1min-1min 30s.
 
-As taking extra damage causes you to eat more, T1 prep fights should be longer on average than T2 prep fights [^2]; how much longer? I ran 10000 simulation fights for a character with level 90 combats, who has 90% ticks used, never hits the wrong defensive prayer, and hits one wrong offensive prayer per fight on average:
+As taking extra damage causes you to eat more, T1 prep fights should be longer on average than T2 prep fights [^2]; but how much longer? I ran 10000 simulation fights for a character with level 90 combats, who has 90% ticks used, never hits the wrong defensive prayer, and hits one wrong offensive prayer per fight on average:
 
 <figure float="center">
   <img src="{{site.baseurl}}/images/TimeDistribution.png" width="80%"/>
@@ -105,16 +133,15 @@ As taking extra damage causes you to eat more, T1 prep fights should be longer o
 As the average T1 fight takes 233 seconds and the average T2 fight takes 214 seconds,  a T2 fight will be **19s** faster on average for this player. 
 Factoring the prep time, this means that a T1 Gauntlet run is still faster then a T2 run, but only by 40s-1min 40s instead.
 
-With this in mind, if you win every Hunlleff fight, you should be doing T1 prep. If your T1 runs are 1 min 10s faster on average, you will save 7 hours and 47 minutes over 400 KC.
+With this in mind, if you **win every Hunlleff fight**, you should be doing T1 prep. If your T1 runs are 1 min 10s faster on average, you will save **7 hours and 47 minutes** over 400 KC.
 
-However, if you **don't** win every Hunllef fight, then we have to take into account the differing winrate between T1 and T2 prep. 
-For example, my estimated winrate is ~0.87 for T2 prep. Therefore to get 400 KC, I'd need to make 460 CG runs. Anecdotally I'd guess my T1 winrate is closer to 0.6. Let's say I improve it to 0.75 with practice. Then the total number of runs needed to get 400 KC is 534. 
+However, if you **don't** win every Hunllef fight, then we have to take into account the effect that your winrate has on the total time taken to hit a certain KC number. For example, my estimated winrate is ~0.87 for T2 prep. Therefore to get 400 KC, I'd need to make 460 CG runs. From my T1 runs so far, my estiamted T1 winrate is 0.58. Let's say I improve it to 0.75 with practice. Then the total number of runs needed to get 400 KC is 534. 
 
-If my T2 prep takes 6 minutes 30s on average, and my T1 prep takes 5 min on average, then 460 T2 CGs takes 77h 51m, and 534 T1 CGs takes 78h 59m! With these winrates, it would actually be faster for me to do T2 prep.
+If my T2 prep takes 6 minutes on average, and my T1 prep takes 4 min 30s on average, then 460 T2 CGs takes 66h 21m, and 534 T1 CGs takes 75h 19m! With these winrates, it would actually be faster for me to do T2 prep.
 
 When you're first learning the Hunllef fight, you are going to be making mistakes that you can survive with T2 armor but not T1 armor. Your T2 winrate will be significantly higher than T1, meaning you will hit your first 50 KC much faster doing T2 prep. 
 The Hunllef fight mechanics are exactly the same on T1 and T2 prep, so all those T2 prep fights will be teaching you mechanics that transfer over to T1 prep. 
-For this reason, I recommend **learning the Hunllef fight doing T2 prep**, and only changing over to T1 prep when you've gotten a decent winrate at T2 prep.
+For this reason, I recommend **learning the Hunllef fight doing T2 prep**, and only changing over to T1 prep when you've gotten a decent winrate (>0.85) at T2 prep.
 
 If you have an estimate of your T2 and T1 winrates and average prep times, you can use the simulator's KC time section to compute which will be faster for you specifically.
 
